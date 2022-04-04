@@ -1,17 +1,18 @@
 #include <stdio.h>
 #include <stdbool.h>
+#define MAX 5
 
 int main(void) {
     int num,count,size,row,col,k;
-    int arr[5][5] = {0,};
-	num = 5;
+    int arr[MAX][MAX] = {0,};
+	num = MAX;
     k = 1;
 	count = 0;
 	size = num;
 	row = 0;
 	col = -1;
 
-	do{
+	while(true){  
 		for (int i = 0; i < size; i++) {
 			col += k;
 			arr[row][col] = ++count;
@@ -24,12 +25,14 @@ int main(void) {
 		}
 
 		k = -k;
-	}while(true);   
+	}
 
 
-	for (row = 0; row < num; row++) {
+	for (row = 0, count=0; row < num; row++) {
 		for (int col = 0; col < num; col++) {
-			printf("%-3d", arr[row][col]);
+			count++;
+			printf("arr[%-d][%-d] vaule:%-4d", row,col,arr[row][col]);
+
 		}
 		printf("\n");
 	}
