@@ -38,6 +38,6 @@ void callback_sig_handler(int nSigNumber){
     printf("We just got a signal(%d).\n", nSigNumber);
 }
 
-// 프로세스에 signal을 보내면 출력해주는 기능인데
-// 10하고 12의 시그널을 kill으로 보내면 callback_sig_handler 메서드가
-// sgnial 함수에서 설정했기에 작동한다.
+//이 소스코드는 실행파일을 실행시 PS를 GETPID로 확인하고
+// 사용자 정의 1,2 시그널을 보낼시에 특정 메서드의 기능을 수행하는것이다.
+// 시그널과 특정 메서드 수행은 signal 메서드에서 정해진다.

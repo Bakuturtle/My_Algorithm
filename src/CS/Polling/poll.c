@@ -10,9 +10,9 @@ int main(void){
         if( access("./test.txt",F_OK) == 0){
             printf("There is a file(%05d).\n",i);
         }
-        usleep(5000);
+        usleep(100000);
     }
     return 0;
 }
-//이 프로그램은 ./test.txt의 파일이 F_OK (존재한다면) PRINTF메서드가
-// 실행되는 프로그램이다.
+//이 프로그램은 ./test.txt의 파일이 F_OK (존재한다면) PRINTF메서드가 실행되는 것 이다.
+//이 프로그램이 동작중에 만약 test.txt 파일이 삭제된다면 printf 메서드는 실행되지 않는다.
